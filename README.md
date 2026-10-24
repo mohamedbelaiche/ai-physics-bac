@@ -41,11 +41,11 @@ npm run dev   # http://localhost:3000
 
 | المتغيّر | الدلالة | الافتراضي |
 |---|---|---|
-| `AI_API_KEY` | مفتاح OpenCode Zen | إلزامي |
-| `AI_BASE_URL` | نقطة النهاية المتوافقة مع OpenAI | https://opencode.ai/zen/v1 |
-| `AI_MODEL` | مُعرّف النموذج | glm-5.3-flash |
+| `AI_API_KEY` | مفتاح OpenRouter | إلزامي |
+| `AI_BASE_URL` | نقطة النهاية المتوافقة مع OpenAI | https://openrouter.ai/api/v1 |
+| `AI_MODEL` | مُعرّف النموذج | z-ai/glm-5.3-flash |
 
-للتحقق من قائمة الموديلات المتاحة: `curl https://opencode.ai/zen/v1/models`
+للتحقق من قائمة الموديلات المتاحة: `curl https://openrouter.ai/api/v1/models`
 
 ## النشر: GitHub ثم Vercel
 

@@ -1,9 +1,9 @@
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
 /**
- * طبقة المزوّد: OpenCode Zen (متوافق مع OpenAI Chat Completions).
- * حول نقطة النهاية: https://opencode.ai/zen/v1/chat/completions
- * والتوثيق: https://opencode.ai/docs/zen/
+ * طبقة المزوّد: OpenRouter (بوابة متوافقة مع OpenAI Chat Completions).
+ * حول نقطة النهاية: https://openrouter.ai/api/v1/chat/completions
+ * والتوثيق: https://openrouter.ai/docs/api-reference/overview
  * المفاتيح تبقى على السيرفر فقط، وهي غير مطبوعة في أي سجل.
  */
 
@@ -20,8 +20,8 @@ export class ProviderConfigError extends Error {
   }
 }
 
-export const DEFAULT_BASE_URL = "https://opencode.ai/zen/v1";
-export const DEFAULT_MODEL = "glm-5.3-flash";
+export const DEFAULT_BASE_URL = "https://openrouter.ai/api/v1";
+export const DEFAULT_MODEL = "z-ai/glm-5.3-flash";
 
 function normalizeBaseURL(raw: string): string {
   let url = raw.trim().replace(/\/+$/, "");
@@ -52,9 +52,16 @@ export type ChatModel = ReturnType<typeof buildChatModel>;
 
 export function buildChatModel(config: ProviderConfig) {
   const provider = createOpenAICompatible({
-    name: "opencode-zen",
+    name: "openrouter",
     baseURL: config.baseURL,
     apiKey: config.apiKey,
+    // ترويسات ترشيح اختيارية لدى OpenRouter (تعريف التطبيق في لوحة إحصاءاتهم).
+    headers: {
+      "X-Title": "AI-Physics-Tutor",
+      ...(process.env.AI_SITE_URL?.trim()
+        ? { "HTTP-Referer": process.env.AI_SITE_URL.trim() }
+        : {}),
+    },
   });
   return provider.chatModel(config.model);
 }
