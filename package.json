@@ -1,0 +1,36 @@
+{
+  "name": "aqel-thani-physics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "عقل ثاني | فيزياء البكالوريا — منصة محادثة تعليمية ذكية لتلاميذ البكالوريا الجزائرية",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "0.2.16",
+    "@fontsource/ibm-plex-sans-arabic": "^5.1.0",
+    "ai": "^4.3.0",
+    "katex": "^0.16.11",
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^9.0.3",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  }
+}

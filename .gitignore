@@ -1,0 +1,34 @@
+# التبعيات والبناء
+node_modules/
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# السرّيات — لا يُرفع أي مفتاح أو .env أبداً
+.env
+.env*
+!.env.example
+
+# طبقة المعرفة المحلية (افتراضياً: تبقى خارج المستودع)
+raw/
+wiki/
+templates/
+index.md
+log.md
+AGENTS.md
+prompt
+.obsidian/
+
+# أدوات النظام
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+install.done
+install.log
+.vercel
+
+# ملفات العرض المؤقتة للفحص
+.aqel-test/
