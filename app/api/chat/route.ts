@@ -89,6 +89,7 @@ export async function POST(req: Request): Promise<Response> {
       system,
       messages: coreMessages,
       temperature: 0.35,
+      maxTokens: 2048,
       abortSignal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
     });
 
